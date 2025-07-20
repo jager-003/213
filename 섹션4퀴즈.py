@@ -7,14 +7,31 @@
 #                  (nav)              (5)             (1)        (!)
 # 예) 생성된 비밀번호 : nav51! 
 
-http = ("http://naver.com")
-print(http[7:])
-print(http[7:12])
+# http = ("http://naver.com")
+# print(http[7:])
+# print(http[7:12])
 
-http2 = http[7:12]
+# http2 = http[7:12]
 
-# print(http2)
-print(http2.count)
-print(http2.index("e"))
+# # print(http2)
+# print(http2.count)
+# print(http2.index("e"))
 
-# print(http2[-3:]+http2.count("e")+"!")
+# print(http2[-3:] + http2.count("e")+"!")
+
+
+
+
+http = "http://naver.com"
+print(http[7:])  # naver.com
+
+http2 = http[7:]               # naver.com
+http2 = http2[:http2.index(".")]  # naver
+
+# 디버깅용 출력
+print(http2)                  # naver
+print(http2.count("e"))       # 1
+print(http2.index("e"))       # 3 (첫 번째 e 위치)
+
+# 비밀번호 생성
+print(http2[:3] + str(len(http2)) + str(http2.count("e")) + "!")
